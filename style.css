@@ -1,0 +1,637 @@
+:root {
+  --primary: #fff;
+  --bg-color: #9FE2BF;
+  --bg-envelope-color: #f5edd1;
+  --envelope-tab: #ecdeb8;
+  --envelope-cover: #e6cfa7;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --txt-color: #444;
+  --heart-color: #9FE2BF;
+  --music-color: palevioletred; /* New variable for music color */
+}
+main{
+  flex: 1;
+  overflow: scroll;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+}
+
+.container {
+  height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+.container > .envelope-wrapper {
+  position: relative;
+  background: var(--bg-envelope-color);
+  box-shadow: 0 0 40px var(--shadow-color);
+}
+
+.envelope-wrapper > .envelope {
+  position: relative;
+  width: 450px;
+  height: 345px;
+}
+
+.envelope-wrapper > .envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-top: 195px solid var(--envelope-tab);
+  border-right: 225px solid transparent;
+  border-left: 225px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+}
+
+.envelope-wrapper > .envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 195px solid transparent;
+  border-right: 225px solid var(--envelope-cover);
+  border-bottom: 150px solid var(--envelope-cover);
+  border-left: 225px solid var(--envelope-cover);
+}
+
+.envelope > .letter {
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  width: fit-content;
+  height: fit-content;
+  background: var(--primary);
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 5px var(--shadow-color);
+  padding: 20px 10px;
+  text-justify: auto;
+  display: none; /* Hide the letter initially */
+}
+
+.envelope > .letter.show-paper {
+  display: block;
+  z-index: 9;
+}
+
+
+.envelope > .letter > .text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: var(--txt-color);
+  text-align: left;
+  font-size: 10px;
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--heart-color);
+  z-index: 4;
+  transform: translate(-50%, -20%) rotate(45deg);
+  transition: transform 0.5s ease-in-out 1s;
+  box-shadow: 0 1px 6px var(--shadow-color);
+  cursor: pointer;
+}
+
+.heart:before, 
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--heart-color);
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -7.5px;
+}
+
+.heart:after {
+  right: 7.5px;
+}
+
+.flap > .envelope:before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.flap > .envelope > .letter {
+  bottom: 100px;
+  transform: scale(1.5);
+  transition-delay: 1s;
+}
+
+.flap > .heart {
+  transform: rotate(90deg);
+  transition-delay: 0.4s;
+}
+
+@keyframes heartFall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.falling-heart {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 20px;
+  height: 30px;
+  background-color: var(--music-color); /* Use variable for music color */
+  z-index: 4;
+  transform: translateX(-50%) rotate(-45deg);
+  animation: heartFall linear forwards;
+}
+
+.falling-heart::before,
+.falling-heart::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--music-color); /* Use variable for music color */
+  border-radius: 50%;
+}
+
+.falling-heart::before {
+  left: 0;
+  transform: translateX(-10px) rotate(45deg);
+}
+
+.falling-heart::after {
+  right: 0;
+  transform: translateX(10px) rotate(-45deg);
+}
+.container1 > h2{
+  position: relative;
+  left:43vw;
+}
+.music {
+  position: fixed;
+  bottom: 0px; 
+  right: 0px;
+}
+.modal-open {
+  overflow: hidden;
+}
+#player {
+  display: none;
+}
+@property --s {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
+.meanie{
+  margin-left: 30%;
+}
+.meanie{
+  margin-left: 20%;
+}
+.luv{
+  margin-left: 15%;
+}
+.kekW{
+  margin-left: 25%;
+}
+@media screen and (max-width: 600px) {
+  .container > .envelope-wrapper {
+    width: 90vw; /* Adjusted width for smaller screens */
+    height: auto; /* Adjusted height for smaller screens */
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .meanie{
+    margin-left: 0px;
+    justify-self: center;
+  }
+  .kekW{
+margin-left: 0%;
+  }
+  .luv{
+  margin-left: 0%;
+  }
+  .sus{
+    margin-left: 0;
+  }
+  .container1 > .message{
+    padding-left: 10px;
+  }
+  .message > p,h1{
+  padding-right: 25px;
+  padding-left: 33.5px;
+  margin-bottom: 10px ;
+  }
+  .message > p {
+    text-align: justify;
+  }
+  .container1{
+    width: 90vw; /* Adjusted width for smaller screens */
+    height: auto; /* Adjusted height for smaller screens */
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .container1 > h2{
+    position: relative;
+    left:0%;
+    top: -5%;
+  }
+  .container1 > .box-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .container{
+  overflow-x: hidden;
+  }
+  .modal{
+    width: 100vw;
+    overflow-x: hidden;
+  }
+  .modal > .content > img{
+    width: 90vw;
+    height: 65vh;
+  }
+  .modal > .content > h1{
+    font-size: 20px;
+  }
+  .modal > .box-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .image-container{
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    overflow-x: hidden;
+  }
+  .image-container > img{
+    width: 90vw;
+  }
+  .envelope-wrapper > .envelope::before,
+  .envelope-wrapper > .envelope::after {
+    border-top-width: 24vh; /* Adjusted border width for smaller screens */
+    border-right-width: 22vh; /* Adjusted border width for smaller screens */
+    border-left-width: 22vh; /* Adjusted border width for smaller screens */
+  }
+  .heart{
+    position: absolute;
+    top: 52%;
+    left: 52%;
+  }
+    .envelope > .letter {
+      position: absolute;
+      top: 15%;
+      right: 30%; 
+      bottom: 5%; 
+      width: 55vw;
+      height: 60vh; 
+      margin-right: 15px; 
+      margin-left: 5px; 
+      box-sizing: border-box;
+    }
+    .music {
+    display: none;
+    }
+}
+img {
+  position: relative;
+  --t: 3px;  
+  --s: 40px; 
+  --g: 8px;  
+  --c: #755C3B;
+  height: 600px;
+  padding: calc(2*var(--t) + var(--g));
+  border: var(--t) solid #0b097900;
+
+}
+img:hover {
+   --s: 80px;
+}
+.image-container {
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px; /* Adjust as needed for spacing */
+}
+.hText{
+  text-align: center;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.btns{
+  display: flex;
+}
+.dugmici{
+  display: flex;
+   justify-content: space-between;
+}
+.box {
+  z-index: 10;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  z-index: 10;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(254, 126, 126, 0.7);
+  transition: all 0.4s;
+  visibility: hidden;
+  opacity: 0;
+}
+.content {
+  z-index: 10;
+  position: absolute;
+  background: white;
+  width: fit-content;
+  padding: 1em 2em;
+  border-radius: 4px;
+}
+.modal:target {
+  z-index: 10;
+  visibility: visible;
+  opacity: 1;
+}
+.box-close {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  color: #fe0606;
+  text-decoration: none;
+  font-size: 30px;
+}
+#newButton {
+  background-color: #ff69b4; /* Pink color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#newButton:hover {
+  background-color: #ff1493; /* Lighter shade of pink on hover */
+}
+h1,
+p {
+	font-family: 'Hind', sans-serif;
+}
+
+p{
+	text-indent: 50px;
+}
+
+h1 {
+	font-weight: 200;
+}
+
+body {
+	margin: 0px;
+}
+body.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px; 
+}
+
+.container1 {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.hearty {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	transition: transform 2s;
+	z-index: 1;
+}
+
+.hearty > img {
+	width: 50px;
+	height: auto;
+}
+
+.message {
+	padding: 20px;
+	background-color: #eee;
+	min-width: 400px;
+	height: 75%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	overflow: hidden;
+	animation-name: openmsg;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: paused;
+	animation-fill-mode: forwards;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 5px;
+}
+.message > h1,p{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.hearty > img:hover {
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+
+@keyframes beat {
+	0% {
+		width: 50px;
+	}
+	25% {
+		width: 58px;
+	}
+	30% {
+		width: 50px;
+	}
+	50% {
+		width: 45px;
+	}
+	60% {
+		width: 50px;
+	}
+	75% {
+		width: 58px;
+	}
+	100% {
+		width: 50px;
+	}
+}
+
+@keyframes openmsg {
+	0% {
+		height: 0px;
+		padding: 0px 20px;
+	}
+	100% {
+		height: 75%;
+		padding: 20px 20px;
+	}
+}
+
+@keyframes heartyMove {
+	0% {
+		top: 50%
+	}
+	100% {
+		top: 85%;
+		transform: translate(-50%, 0);
+	}
+}
+
+.openNor {
+	animation-direction: normal;
+	animation-play-state: running;
+}
+
+.closeNor {
+	animation-direction: reverse;
+	animation-play-state: running;
+}
+
+.no-anim {
+	animation: none;
+}
+
+.closed {
+	height: 0px;
+	padding: 0px 20px;
+}
+
+.bottom {
+	bottom: 5px;
+}
+
+.openHer {
+	animation-name: heartyMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+}
+
+.closeHer {
+	animation-name: heartyMove;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-play-state: running;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
+
+.beating > img {
+	animation-name: beat;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+.openedHer {
+	top: 85%;
+	transform: translate(-50%, 0);
+}
+.butt {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #1a1468;
+  background-color: #211a8a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, background-color 0.3s;
+  font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+  color: white;
+}
+a{
+  text-decoration:none;
+  font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+  color: white;
+}
+.butt::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(14, 12, 87, 0.5);
+  border-radius: 50%;
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.butt span {
+  position: relative;
+  z-index: 1;
+}
+
+.butt:hover::before {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+
+.butt:hover {
+  color: #007bff;
+  background-color: #fff;
+}
+
+

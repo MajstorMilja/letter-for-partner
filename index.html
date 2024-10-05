@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello :) </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="letter">
+                    <div class="text">
+                        <strong>Dear.</strong>
+                        <p style="font-family: 'Brush Script MT', 'Brush Script Std', cursive;">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, rem ad consectetur reiciendis numquam asperiores, minus sunt minima iste, laboriosam quibusdam obcaecati esse sequi perspiciatis ipsum delectus labore voluptatibus consequatur.
+                        </p>
+                        <div id="timer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </div>
+    </div>
+    
+
+    <div class="image-container">
+        <h3 class="hText">Did you like my site?</h3>
+        <img class="btns" src="images/lil dud.jpg" alt="a bird">
+        <div class="dugmici">
+            <a onclick="openModal()" href="#popup-box"><button class="butt">YES!</button></a>
+            <a onclick="openModal()" href="#sad-box"><button class="butt">NO!</button></a>
+        </div>
+    </div>
+
+    <div id="popup-box" class="modal" style="background-color: rgb(38, 38, 90);">
+        <div class="content" style="background-color: rgb(21, 21, 119);">
+            <h1 style="color: rgb(214, 209, 209);">Whoaaaa hehe im glad :3</h1>
+            <img class="btns" src="images/thank u ;3.jpg" alt="a bird">
+            <a href="#happy-box"><button style="background-color: rgb(131, 0, 0); margin-left: 35%;" class="butt">You want more!?</button></a>
+        </div>
+        <a onclick="closeModal()" href="#" class="box-close">×</a>
+    </div>
+    <div id="sad-box" class="modal">
+        <div class="content">
+            <h1 style="color: rgb(122, 0, 0);">MEANIE!</h1>
+            <p>You reaaaly didn't like it?</p>
+            <img class="btns" src="images/are you sure.jpg" alt="a bird">
+            <div class="dugmici">
+            <a href="#popup-box"><button class="butt">NO, i actually liked it!</button></a>
+            <a href="#sadg-box"><button class="butt">NO, i didn't like it!!</button></a>
+            </div>
+        </div>
+         <a onclick="closeModal()" href="#" class="box-close">×</a>
+    </div>
+    <div id="sadg-box" class="modal">
+        <div class="content">
+            <h1 style="color: rgb(122, 0, 0);">MEANIE!</h1>
+            <p>You brok mii heart :C</p>
+            <img class="btns" src="images/meanie.jpg" alt="a bird">
+            <a href="#angy-box" class="meanie"><button class="butt">Click this button(you have no choice)!</button></a>     
+        </div>
+        <a onclick="closeModal()" href="#" class="box-close">×</a>
+    </div>
+    <div id="angy-box" class="modal">
+        <div class="content">
+            <h1 style="color: rgb(122, 0, 0);">MEANIE!</h1>
+            <p>Now its gojover for you,there is no turning bacc</p>
+            <img class="btns" src="images/hehe.jpg" alt="a bird">
+            <a href="#heartyyyy-box" class="sus"><button class="butt">Click this button(hopefully scared)!</button></a>  
+        </div>
+        <a onclick="closeModal()" href="#" class="box-close">×</a>
+    </div>
+    <div id="heartyyyy-box" class="modal">
+        <div class="content">
+            <h1 style="color: rgb(143, 22, 167);">MEANIE!</h1>
+            <p>i still appreciate you :3 its oki u mii-chan favourite person</p>
+            <img class="btns" src="images/heartForTii.jpg" alt="a bird">
+            <a href="#stawbery-box" class="luv"><button class="butt">LAST btn bcs you choosen evil path you must click it!</button></a>
+        </div>
+        <a onclick="closeModal()" href="#" class="box-close">×</a>
+    </div>
+    <div id="stawbery-box" class="modal">
+        <div class="content">
+            <h1 style="color: rgb(143, 22, 167);">:33333</h1>
+            <p>Thank you for being you, you are the bestest hehe</p>
+            <img class="btns" src="images/stawbery.jpg" alt="a bird">
+        </div>
+        <a onclick="closeModal()" href="#" class="box-close">×</a>
+
+    </div>
+
+        <div id="happy-box" class="modal" style="background-color: rgb(238, 69, 210);">
+            <div class="content">
+                <!-- <h1 style="color: rgb(87, 119, 12);"></h1> -->
+                <img class="btns" src="images/flwr.jpg" alt="a bird">
+                <a href="#heart-box" class="kekW"><button class="butt">EVEN MORE?! you are so greedy hehe</button></a>
+            </div>
+            <a onclick="closeModal()" href="#" class="box-close">×</a>
+        </div>
+        <div id="heart-box" class="modal" style="background-color: rgb(190, 138, 182);">
+            <div class="container1">
+                <label>
+                <div class="hearty">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"></img>
+                </div>
+                <input id="messageState" type="checkbox" style="display:none"/>
+                </label>
+                <div class="message">
+                    <h1>Ummmmmm</h1>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nemo esse iure doloremque neque cum sunt eum facilis ad est, totam provident accusamus. Architecto tempora, quas quaerat distinctio inventore dicta.❤️
+                    </p>
+                </div>
+                  <br>
+                  <h2>You are prrrrrrrrrrr-fect</h2>
+                  <a onclick="closeModal()" href="#" class="box-close">× </a>
+            </div>
+
+    <div class="music">
+        <p style="text-align: center;">Playy sonnggg!</p>
+    <audio  controls autoplay src="SongforMyDear.mp3"></audio>
+</div>
+<script>
+      function openModal(modalId) {
+      document.body.classList.add('modal-open');
+      document.getElementById(modalId).style.display = 'block';
+    }
+    
+      function closeModal(modalId) {
+      document.body.classList.remove('modal-open');
+      document.getElementById(modalId).style.display = 'none';
+    }
+    </script>
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const letter = document.querySelector('.letter');
+        let clickedOnce = false;
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+    
+            setTimeout(() => {
+                letter.classList.toggle('show-paper');
+            }, 1000); 
+            setTimeout(() => {
+            for (let i = 0; i < 10; i++) { 
+            createHeart();
+            clickedOnce = true;
+        }
+    });
+        });
+
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('falling-heart'); // Use the new class for the falling hearts
+        document.body.appendChild(heart);
+        
+        // Set random position and animation duration for each heart
+        const x = Math.random() * window.innerWidth;
+        const duration = Math.random() * 2 + 1; // Random duration between 1 and 3 seconds
+        
+        heart.style.left = `${x}px`;
+        heart.style.animationDuration = `${duration}s`;
+        
+        // Remove the heart element after the animation ends
+        heart.addEventListener('animationend', () => {
+            heart.remove();
+        });
+    }
+    </script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#messageState").on("change", function() {
+    $(".message").removeClass("openNor").removeClass("closeNor");
+    if ($("#messageState").is(":checked")) {
+      $(".message").removeClass("closed").removeClass("no-anim").addClass("openNor");
+      $(".hearty").removeClass("closeHer").removeClass("openedHer").addClass("openHer");
+      $(".container").stop().animate({"backgroundColor": "#f48fb1"}, 2000);
+      console.log("Opening");
+    } else {
+      $(".message").removeClass("no-anim").addClass("closeNor");
+      $(".hearty").removeClass("openHer").removeClass("openedHer").addClass("closeHer");
+      $(".container").stop().animate({"backgroundColor": "#fce4ec"}, 2000);
+      console.log("Closing");
+    }
+  });
+
+  $(".message").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+    console.log("Message Animation End");
+    if ($(".message").hasClass("closeNor"))
+      $(".message").addClass("closed");
+    $(".message").removeClass("openNor").removeClass("closeNor").addClass("no-anim");
+  });
+
+  $(".hearty").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+    console.log("Hearty Animation End");
+    if (!$(".hearty").hasClass("closeHer"))
+      $(".hearty").addClass("openedHer").addClass("beating");
+    else
+      $(".hearty").addClass("no-anim").removeClass("beating");
+    $(".hearty").removeClass("openHer").removeClass("closeHer");
+  });
+});
+</script>
+    <script>
+    // Date of when you met the person
+    const startDate = new Date('2024-02-19T10:02:00');
+
+    // Function to update the timer
+    function updateTimer() {
+        const currentDate = new Date();
+        const timeDifference = currentDate - startDate;
+
+        // Calculate elapsed time
+        const daysElapsed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hoursElapsed = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutesElapsed = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const secondsElapsed = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        // Construct the timer message
+        let timerMessage = `We offically started talking ${daysElapsed} days, ${hoursElapsed} hours, ${minutesElapsed} minutes, and ${secondsElapsed} seconds ago.`;
+
+        // Update the content of the timer div
+        document.getElementById('timer').innerText = timerMessage;
+    }
+
+    // Call updateTimer function initially
+    updateTimer();
+
+    // Call updateTimer function every second to keep the timer updated
+    setInterval(updateTimer, 1000);
+</script>
+</body>
+</html>
